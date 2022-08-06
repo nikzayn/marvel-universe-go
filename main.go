@@ -19,7 +19,7 @@ func main() {
 	}
 
 	// To initialize router with gin
-	// gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.ReleaseMode)
 	router := gin.New()
 
 	router.LoadHTMLGlob("templates/*")
