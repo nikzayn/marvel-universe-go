@@ -6,6 +6,9 @@ import (
 	"os"
 )
 
+/* Hashed string function provides a hash to use the
+marvel api with timestamp, private key and public key
+*/
 func HashedString(currentTime string, publicKey string) string {
 	//Private key generated from Marvel developers account
 	privateKey := os.Getenv("PRIVATE_KEY")
