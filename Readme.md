@@ -12,6 +12,7 @@
 - Technologies Required
 - Issues
 - Edge Cases
+- Testing
 - API Usage
 - Demo
 
@@ -87,6 +88,12 @@
 - You are not allowed to go to search page directly, else it will show 404 page, because you can direct the page to form submission page you can reload it with alert warning, by confirming yes or no
 - Also, API is cached using gin-contrib/cache, I found it to be the easy implementation for this project as we are only loading
   one api
+
+### Testing
+
+- After testing the app, I found out that caching is working only for currentOffset page value and it is returning results fast
+  but when we are doing pagination our currentOffset is not getting updated. I am thinking on how to approach for this and solve it.
+- I have commented the code in `controllers/search.go` where you can see that all you need to uncomment it and put the controller return type which is **func(c \*gin.Context)** as a last parameter of cache function. It will work but not update the offset value to see different characters
 
 ### API Usage
 
