@@ -103,6 +103,6 @@
 
 ### Demo
 
-- Here's the image of web app: ![demo][./assets/homepage.png]
-- Search results: ![demo][./assets/search-character.png]
-- API caching results: ![demo][./assets/api-caching.png]
+- Here's the image of web app: ![demo][https://github.com/nikzayn/marvel-universe-go/blob/main/assets/homepage.png]
+- Search results: ![demo][https://github.com/nikzayn/marvel-universe-go/blob/main/assets/search-character.png]
+- API caching results: ![demo][https://github.com/nikzayn/marvel-universe-go/blob/main/assets/api-caching.png]
