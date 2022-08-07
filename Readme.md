@@ -103,6 +103,6 @@
 
 ### Demo
 
-- Here's the image of web app: ![demo][https://i.ibb.co/0kssq2b/screenshot-2022-08-07-at-2-42-30-am.png]
-- Search results: ![demo][https://i.ibb.co/xg1rn1w/screenshot-2022-08-07-at-2-43-48-am.png]
-- API caching results: ![demo][https://i.ibb.co/t47vnh5/screenshot-2022-08-07-at-1-56-51-pm.png]
+- Here's the image of web app: ![demo][/assets/homepage.png]
+- Search results: ![demo][/assets/search-character.png]
+- API caching results: ![demo][/assets/api-caching.png]
