@@ -66,6 +66,7 @@
 - Http
 - Encoding hex
 - Crypto/md5
+- Gin-contrib/cache
 - Docker
 
 ### Issues
@@ -74,7 +75,7 @@
   whole web page and thus we are not maintaining consistency.
 - Another one is that for the pagination, we are again depended on using forms to get the offset value to show different characters. Actually, it's not a proper pagination because on clicking offset value we are resetting the offset value on form submit and also on form submit whole page reloads. I have tried **event.preventDefault()** using ajax but it's not working.
 - When our app starts, there's a UI problem in which we need to click on empty search form to show the marvel data. On first reload we also need to show the results from API.
-- Not able to implement the unit test cases for routes.
+- Not able to implement the unit test cases at some places.
 - Naming convention at some places are not appropriate.
 
 ### Edge Cases
@@ -82,7 +83,10 @@
 - Created a web app which is responsive i.e mobile-friendly.
 - Implemented docker for ease
 - App structure
-- Implemented search filter
+- Implemented search filter and pagination UI
+- You are not allowed to go to search page directly, else it will show 404 page, because you can direct the page to form submission page you can reload it with alert warning, by confirming yes or no
+- Also, API is cached using gin-contrib/cache, I found it to be the easy implementation for this project as we are only loading
+  one api
 
 ### API Usage
 
@@ -94,3 +98,4 @@
 
 - Here's the image of web app: ![demo][https://i.ibb.co/0kssq2b/screenshot-2022-08-07-at-2-42-30-am.png]
 - Search results: ![demo][https://i.ibb.co/xg1rn1w/screenshot-2022-08-07-at-2-43-48-am.png]
+- API caching results: ![demo][https://i.ibb.co/t47vnh5/screenshot-2022-08-07-at-1-56-51-pm.png]
