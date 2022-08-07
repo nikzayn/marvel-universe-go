@@ -18,20 +18,24 @@ func main() {
 		fmt.Println(err)
 	}
 
-	// To initialize router with gin
-	router := gin.New()
 	// Set gin mode to release to avoid logs clutter in terminal
 	gin.SetMode(gin.ReleaseMode)
+
+	// To initialize router with gin
+	router := gin.New()
+
 	// Trusting all proxies on default host
 	router.SetTrustedProxies([]string{"127.0.0.1"})
 
 	// Loading all HTML glob in template directory
 	router.LoadHTMLGlob("templates/*")
+
 	// Initialized gin logger
 	router.Use(gin.Logger())
 
 	// Route for main page
 	routes.HomeRoute(router)
+
 	// Route where you can search for data
 	routes.SearchRoute(router)
 
