@@ -1,11 +1,12 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 	"time"
 
 	// Gin middleware/handler to enable Cache
-	"github.com/gin-contrib/cache"
+
 	"github.com/gin-contrib/cache/persistence"
 	"github.com/gin-gonic/gin"
 	"github.com/nikzayn/marvel-universe-go/api"
@@ -20,7 +21,8 @@ and convert it to provide a new blob of HTML with meaningful data
 func SearchName() gin.HandlerFunc {
 
 	// Added page cache to store the data with default timestamp
-	return cache.CachePage(store, time.Minute, func(c *gin.Context) {
+	// cache.CachePage(store, time.Minute, func(c *gin.Context) {})
+	return func(c *gin.Context) {
 		// Getting search value from web
 		inputName := c.Request.FormValue("search")
 		// Getting current offset from web
@@ -36,6 +38,8 @@ func SearchName() gin.HandlerFunc {
 			timeStampParams = "?ts="
 		}
 
+		fmt.Println(currentOffset)
+
 		characterData := api.GetAllCharacter(nameSearchParams, inputName, timeStampParams, currentOffset)
 
 		// Updating view of HTML page with characterData
@@ -43,5 +47,5 @@ func SearchName() gin.HandlerFunc {
 			"title": "Marvel Freeverse",
 			"data":  characterData,
 		})
-	})
+	}
 }
